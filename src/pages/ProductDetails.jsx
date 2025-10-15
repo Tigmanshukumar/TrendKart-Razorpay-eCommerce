@@ -70,7 +70,7 @@ const ProductDetails = () => {
         <div className="md:flex">
           <div className="md:w-1/2">
             <img 
-              src={product.image.startsWith('http') ? product.image : '/' + product.image} 
+              src={product.image.startsWith('http') ? product.image : product.image} 
               alt={product.name} 
               className="w-full h-96 object-cover"
             />

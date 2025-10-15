@@ -121,7 +121,7 @@ const Products = () => {
                     <img 
                       src={product.image} 
                       alt={product.name} 
-                      className="w-full h-48 object-cover"
+                      className="w-full h-48 object-cover hover:opacity-80 transition-opacity"
                     />
                   </Link>
                   <div className="p-4">
