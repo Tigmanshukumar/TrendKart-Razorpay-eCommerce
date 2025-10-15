@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -20,7 +21,7 @@ const Login = () => {
     e.preventDefault();
     // In a real app, you would handle authentication here
     console.log('Login submitted:', formData);
-    alert('Login functionality would be implemented in a real app');
+    toast.info('Login functionality would be implemented in a real app');
   };
   
   return (

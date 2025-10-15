@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -23,13 +24,13 @@ const Signup = () => {
     e.preventDefault();
     
     if (formData.password !== formData.confirmPassword) {
-      alert('Passwords do not match');
+      toast.error('Passwords do not match');
       return;
     }
     
     // In a real app, you would handle registration here
     console.log('Signup submitted:', formData);
-    alert('Signup functionality would be implemented in a real app');
+    toast.info('Signup functionality would be implemented in a real app');
   };
   
   return (

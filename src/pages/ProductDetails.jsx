@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import products from '../data/products';
+import { toast } from 'react-toastify';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -29,6 +30,7 @@ const ProductDetails = () => {
   const handleAddToCart = () => {
     if (product) {
       addToCart(product, quantity);
+      toast.success(`${product.name} added to cart!`);
     }
   };
   
@@ -68,7 +70,7 @@ const ProductDetails = () => {
         <div className="md:flex">
           <div className="md:w-1/2">
             <img 
-              src={product.image} 
+              src={product.image.startsWith('http') ? product.image : '/' + product.image} 
               alt={product.name} 
               className="w-full h-96 object-cover"
             />

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import products from '../data/products';
 import { useCart } from '../context/CartContext';
+import { toast } from 'react-toastify';
 
 const Products = () => {
   const location = useLocation();
@@ -140,7 +141,10 @@ const Products = () => {
                     </div>
                     <button 
                       className="w-full btn btn-primary"
-                      onClick={() => addToCart(product)}
+                      onClick={() => {
+                        addToCart(product);
+                        toast.success(`${product.name} added to cart!`);
+                      }}
                     >
                       Add to Cart
                     </button>

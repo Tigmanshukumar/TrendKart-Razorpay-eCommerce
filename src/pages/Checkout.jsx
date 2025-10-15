@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { toast } from 'react-toastify';
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ const Checkout = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // In a real app, you would process payment here
-    alert('Order placed successfully!');
+    toast.success('Order placed successfully!');
     clearCart();
     navigate('/');
   };

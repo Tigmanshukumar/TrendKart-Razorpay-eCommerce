@@ -10,6 +10,8 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import { CartProvider } from './context/CartContext'
 import { ThemeProvider } from './context/ThemeContext'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
   return (
@@ -29,6 +31,24 @@ function App() {
             </Routes>
           </main>
           <Footer />
+          <ToastContainer 
+            position="top-center"
+            theme="colored"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            toastClassName="font-medium"
+            style={{ width: "auto" }}
+            toastStyle={{ 
+              borderRadius: "0.375rem",
+              boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
+            }}
+          />
         </div>
       </CartProvider>
     </ThemeProvider>
